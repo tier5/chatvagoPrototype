@@ -52,7 +52,7 @@
         <form action="chatbox.php" method="post">
           <div class="form-group">
             <label for="exampleInputEmail1">Route : </label>
-            <span>https://chatvago.tier5-development.us/send.php?psid=<PSID></span>
+            <span>https://chatvago.tier5-development.us/send.php?psid=PSID</span><br>
             <label for="exampleInputEmail1">Access Token </label>
             <input class="form-control" id="access_token" name="access_token" type="text" aria-describedby="emailHelp" placeholder="Access Token">
           </div>
@@ -115,8 +115,6 @@
             var getMesg = $('#send_message_text').val();
 
             $.post('message.php', {getMesg: getMesg, chooseUser: chooseUser.join(", ")}, function(data){
-             
-            alert(data);
              
            }).fail(function(data) {
          

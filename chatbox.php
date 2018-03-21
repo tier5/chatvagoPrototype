@@ -8,6 +8,13 @@ $access_token = trim($_POST['access_token']);
 
 $find_token = mysqli_query($conDB, "SELECT * FROM `fb_token_table`");
 
+
+if(isset($_GET['deleteId'])) {
+
+mysqli_query($conDB, "DELETE FROM `users` WHERE id =".$_GET['deleteId']);
+header("Location: index.php?success=1");	
+}
+
 if (mysqli_num_rows($find_token) != 0) {
 
 mysqli_query($conDB, "UPDATE `fb_token_table` SET data_token = '".$access_token."'");
